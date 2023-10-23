@@ -7,9 +7,8 @@ async function handler(req, res) {
   if (req.method === 'POST') {
     const data = req.body;
    //Change this mongo path and the others. It doesn't work anymore
-    const client = await MongoClient.connect(
-      'mongodb+srv://MattGM97:ornitorrincoMongoDB@cluster0.wihiaya.mongodb.net/meetup?retryWrites=true&w=majority'
-    );
+   const dbURL = process.env.MONGODB_URL
+    const client = await MongoClient.connect(dbURL);
     const db = client.db();
 
     const meetupsCollection = db.collection('meetups');
