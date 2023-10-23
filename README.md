@@ -6,6 +6,9 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/mattgm97/Mettings-app?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/mattgm97/Mettings-app?style=for-the-badge)
 
+
+Check it out here: <a href="https://mettings-app.vercel.app/"></a>
+
 Home page
 <img src="/projectImages/home.png" alt="Home">
 Meetup Details Page
