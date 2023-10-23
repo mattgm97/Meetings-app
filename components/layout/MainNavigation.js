@@ -41,7 +41,7 @@ function MainNavigation() {
   );*/
 
   return (
-    <AppBar position="static">
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
 
@@ -90,13 +90,13 @@ function MainNavigation() {
               }}
             >
 
-              <MenuItem >
+              <MenuItem onClick={handleCloseNavMenu}>
                 <Link style={{
                   textDecoration: 'none',
                   color: '#000'
                 }} href='/'>All Meetups</Link>
               </MenuItem>
-              <MenuItem >
+              <MenuItem onClick={handleCloseNavMenu}>
                 <Link style={{
                   textDecoration: 'none',
                   color: '#000'
