@@ -8,7 +8,7 @@ async function handler(req, res) {
     const data = req.body;
    //Change this mongo path and the others. It doesn't work anymore
     const client = await MongoClient.connect(
-      'mongodb'
+      'mongodb+srv://MattGM97:ornitorrincoMongoDB@cluster0.wihiaya.mongodb.net/meetup?retryWrites=true&w=majority'
     );
     const db = client.db();
 
