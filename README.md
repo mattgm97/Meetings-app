@@ -21,8 +21,8 @@ The project is still in development, here are the next steps and improvements:
 
 ### Technologies Used
 
-   <div style="display: inline_block" align="center"><br>
-<h2 align="center"> Technologies </h2>
+   <div style="display: inline_block" align="center">
+
   <img align="center" alt="Icon-HTML" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" />
   <img align="center" alt="Icon-CSS" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" />
   <img align="center" alt="Icon-Javascript" height="50" width="50" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg" />
