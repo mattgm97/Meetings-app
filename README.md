@@ -7,7 +7,7 @@
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/mattgm97/Mettings-app?style=for-the-badge)
 
 
-Check it out <a href="https://mettings-app.vercel.app/">here</a>
+Check it out <a href="https://mettings-app.vercel.app/" type="_blank">here</a>
 
 Home page
 <img src="/projectImages/home.png" alt="Home">
