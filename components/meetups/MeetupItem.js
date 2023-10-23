@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
 
-import Card from '../ui/Card';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { Button, CardActions } from '@mui/material';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem(props) {
@@ -10,22 +14,38 @@ function MeetupItem(props) {
     router.push('/' + props.id);
   }
 
+
   return (
     <li className={classes.item}>
-      <Card>
-        <div className={classes.image}>
-          <img src={props.image} alt={props.title} />
-        </div>
-        <div className={classes.content}>
-          <h3>{props.title}</h3>
-          <address>{props.address}</address>
-        </div>
-        <div className={classes.actions}>
-          <button onClick={showDetailsHandler}>Show Details</button>
-        </div>
+      <Card sx={{paddingBottom:"1rem"}}>
+        <CardMedia
+          component="img"
+          height="427"
+          image={props.image}
+          alt={props.title}
+        />
+        <CardContent>
+          <Typography align="center" gutterBottom variant="h4" component="div">
+            {props.title}
+          </Typography>
+          <Typography align="center" variant="body2" color="text.secondary">
+            {props.address}
+          </Typography>
+        </CardContent>
+
+        <CardActions sx={{
+          display: "flex",
+          justifyContent: "center"
+        }}>
+          <Button variant="contained" onClick={showDetailsHandler} size="medium" color="primary">
+            Show Details
+          </Button>
+        </CardActions>
+
       </Card>
     </li>
-  );
+
+  )
 }
 
 export default MeetupItem;
