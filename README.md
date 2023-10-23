@@ -6,8 +6,12 @@
 ![Bitbucket open issues](https://img.shields.io/bitbucket/issues/mattgm97/Mettings-app?style=for-the-badge)
 ![Bitbucket open pull requests](https://img.shields.io/bitbucket/pr-raw/mattgm97/Mettings-app?style=for-the-badge)
 
+Home page
 <img src="/projectImages/home.png" alt="Home">
+Meetup Details Page
 <img src="/projectImages/details.png" alt="Details">
+
+Add Meetup Form Page
 <img src="/projectImages/addMeetup.png" alt="Add meetup form">
 
 > This is a Next.js project which uses a MongoDB database to store and retrieve information about meetups. The user can see a list of meetups, access meetup details and add new meetups.
