@@ -1,7 +1,8 @@
 import { useRef } from 'react';
-
-import Card from '../ui/Card';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
 import classes from './NewMeetupForm.module.css';
+import Button from '@mui/material/Button';
 
 function NewMeetupForm(props) {
   const titleInputRef = useRef();
@@ -28,34 +29,35 @@ function NewMeetupForm(props) {
   }
 
   return (
-    <Card>
+    <Box sx={{
+      backgroundColor: "white",
+      borderRadius: "6px",
+      boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
+    }}>
       <form className={classes.form} onSubmit={submitHandler}>
         <div className={classes.control}>
-          <label htmlFor='title'>Meetup Title</label>
-          <input type='text' required id='title' ref={titleInputRef} />
+          <TextField fullWidth required id="title" label="Meetup Title" variant="standard" inputRef={titleInputRef} />
+
         </div>
         <div className={classes.control}>
-          <label htmlFor='image'>Meetup Image</label>
-          <input type='url' required id='image' ref={imageInputRef} />
+          <TextField fullWidth required id="image" label="Meetup Image" variant="standard" inputRef={imageInputRef} />
+
         </div>
         <div className={classes.control}>
-          <label htmlFor='address'>Address</label>
-          <input type='text' required id='address' ref={addressInputRef} />
+          <TextField fullWidth required id="address" label="Address" variant="standard" inputRef={addressInputRef} />
+
         </div>
         <div className={classes.control}>
-          <label htmlFor='description'>Description</label>
-          <textarea
-            id='description'
-            required
-            rows='5'
-            ref={descriptionInputRef}
-          ></textarea>
+          <TextField multiline rows={5} fullWidth required id="description" label="Description" variant="standard" inputRef={descriptionInputRef} />
+
         </div>
         <div className={classes.actions}>
-          <button>Add Meetup</button>
+          <Button variant="contained"  size="medium" color="primary"  type="submit">
+          Add Meetup
+          </Button>
         </div>
       </form>
-    </Card>
+    </Box>
   );
 }
 
