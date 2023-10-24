@@ -19,20 +19,8 @@ function HomePage(props) {
   );
 }
 
-// export async function getServerSideProps(context) {
-//   const req = context.req;
-//   const res = context.res;
 
-//   // fetch data from an API
-
-//   return {
-//     props: {
-//       meetups: DUMMY_MEETUPS
-//     }
-//   };
-// }
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // fetch data from an API
 
   const {meetupsCollection, client} = await mongoDBConnector()
@@ -50,8 +38,7 @@ export async function getStaticProps() {
         image: meetup.image,
         id: meetup._id.toString(),
       })),
-    },
-    revalidate: 1,
+    }
   };
 }
 
