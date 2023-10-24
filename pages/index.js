@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 import Head from 'next/head';
-import { MongoClient } from 'mongodb';
 
 import MeetupList from '../components/meetups/MeetupList';
+import mongoDBConnector from '../helpers/mongoDBConnector'
 
 function HomePage(props) {
   return (
@@ -34,11 +34,8 @@ function HomePage(props) {
 
 export async function getStaticProps() {
   // fetch data from an API
-  const dbURL = process.env.MONGODB_URL
-  const client = await MongoClient.connect(dbURL);
-  const db = client.db();
 
-  const meetupsCollection = db.collection('meetups');
+  const {meetupsCollection, client} = await mongoDBConnector()
 
   const meetups = await meetupsCollection.find().toArray();
   

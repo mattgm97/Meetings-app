@@ -1,6 +1,7 @@
-import { MongoClient, ObjectId } from 'mongodb';
+import { ObjectId } from 'mongodb';
 import { Fragment } from 'react';
 import Head from 'next/head';
+import mongoDBConnector from '../../helpers/mongoDBConnector'
 
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 
@@ -23,11 +24,8 @@ function MeetupDetails(props) {
 
 export async function getStaticPaths() {
 
-  const dbURL = process.env.MONGODB_URL
-  const client = await MongoClient.connect(dbURL);
-  const db = client.db();
 
-  const meetupsCollection = db.collection('meetups');
+  const {meetupsCollection, client} = await mongoDBConnector()
 
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
 
@@ -48,10 +46,7 @@ export async function getStaticProps(context) {
 
   const meetupId = context.params.meetupId;
 
-  const client = await MongoClient.connect(dbURL);
-  const db = client.db();
-
-  const meetupsCollection = db.collection('meetups');
+  const {meetupsCollection, client} = await mongoDBConnector()
 
   const selectedMeetup = await meetupsCollection.findOne({
     _id: ObjectId(meetupId),
