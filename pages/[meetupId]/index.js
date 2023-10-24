@@ -6,17 +6,18 @@ import mongoDBConnector from '../../helpers/mongoDBConnector'
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 
 function MeetupDetails(props) {
+
   return (
     <Fragment>
       <Head>
-        <title>{props.meetupData.title}</title>
-        <meta name='description' content={props.meetupData.description} />
+        <title>{props.meetupData?.title}</title>
+        <meta name='description' content={props.meetupData?.description} />
       </Head>
       <MeetupDetail
-        image={props.meetupData.image}
-        title={props.meetupData.title}
-        address={props.meetupData.address}
-        description={props.meetupData.description}
+        image={props.meetupData?.image}
+        title={props.meetupData?.title}
+        address={props.meetupData?.address}
+        description={props.meetupData?.description}
       />
     </Fragment>
   );
@@ -25,8 +26,8 @@ function MeetupDetails(props) {
 export async function getStaticPaths() {
 
 
-  const {meetupsCollection, client} = await mongoDBConnector()
-
+  const {meetupsCollection, client, error} = await mongoDBConnector()
+ 
   const meetups = await meetupsCollection.find({}, { _id: 1 }).toArray();
 
   client.close();
@@ -44,7 +45,7 @@ export async function getStaticProps(context) {
 
   const meetupId = context.params.meetupId;
 
-  const {meetupsCollection, client} = await mongoDBConnector()
+  const {meetupsCollection, client, error} = await mongoDBConnector()
 
   const selectedMeetup = await meetupsCollection.findOne({
     _id: ObjectId(meetupId),
@@ -55,12 +56,12 @@ export async function getStaticProps(context) {
   return {
     props: {
       meetupData: {
-        id: selectedMeetup._id.toString(),
-        title: selectedMeetup.title,
-        address: selectedMeetup.address,
-        image: selectedMeetup.image,
-        description: selectedMeetup.description,
-      },
+        id: selectedMeetup?._id.toString(),
+        title: selectedMeetup?.title,
+        address: selectedMeetup?.address,
+        image: selectedMeetup?.image,
+        description: selectedMeetup?.description,
+      }
     },
   };
 }

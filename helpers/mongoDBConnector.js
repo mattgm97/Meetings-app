@@ -1,12 +1,19 @@
 import { MongoClient } from 'mongodb';
 
- const mongoDBConnector = async ()=>{
+const mongoDBConnector = async () => {
     const dbURL = process.env.MONGODB_URL
-    const client = await MongoClient.connect(dbURL);
-    const db = client.db();
-  
-    const meetupsCollection = db.collection('meetups');
-    return {meetupsCollection, client}
+
+    try {
+        const client = await MongoClient.connect(dbURL);
+        const db = client.db();
+
+        const meetupsCollection = db.collection('meetups');
+        return { meetupsCollection, client }
+    } catch (error) {
+        console.log("failed to connect with DB")
+       return error
+    }
+
 }
 
 
