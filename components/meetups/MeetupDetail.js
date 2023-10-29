@@ -4,7 +4,7 @@ import { Fade, Zoom } from '@mui/material';
 function MeetupDetail(props) {
   return (
     <section className={classes.detail}>
-      <Fade in>
+      <Fade in timeout={700}>
         <img
           src={props.image}
           alt={props.title}
