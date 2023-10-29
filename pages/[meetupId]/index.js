@@ -2,7 +2,6 @@ import { ObjectId } from 'mongodb';
 import { Fragment } from 'react';
 import Head from 'next/head';
 import mongoDBConnector from '../../helpers/mongoDBConnector'
-
 import MeetupDetail from '../../components/meetups/MeetupDetail';
 
 function MeetupDetails(props) {

@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import classes from './NewMeetupForm.module.css';
 import Button from '@mui/material/Button';
+import Slide from '@mui/material/Slide';
 
 function NewMeetupForm(props) {
   const titleInputRef = useRef();
@@ -29,7 +30,8 @@ function NewMeetupForm(props) {
   }
 
   return (
-    <Box sx={{
+    <Slide direction="up" in mountOnEnter unmountOnExit>
+<Box sx={{
       backgroundColor: "white",
       borderRadius: "6px",
       boxShadow: "0 2px 8px rgba(0, 0, 0, 0.2)"
@@ -58,6 +60,8 @@ function NewMeetupForm(props) {
         </div>
       </form>
     </Box>
+    </Slide>
+    
   );
 }
 

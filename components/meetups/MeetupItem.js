@@ -4,7 +4,7 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import { Button, CardActions } from '@mui/material';
+import { Button, CardActions, Grow } from '@mui/material';
 import classes from './MeetupItem.module.css';
 
 function MeetupItem(props) {
@@ -16,6 +16,7 @@ function MeetupItem(props) {
 
 
   return (
+    <Grow in>
     <li className={classes.item}>
       <Card sx={{paddingBottom:"1rem"}}>
         <CardMedia
@@ -44,6 +45,7 @@ function MeetupItem(props) {
 
       </Card>
     </li>
+    </Grow>
 
   )
 }

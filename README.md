@@ -24,7 +24,9 @@ Add Meetup Form Page
 The project is still in development, here are the next steps and improvements:
 
 - [x] Migrate to MUI
+- [x] Animations
 - [ ] Error handling
+
 
 ### Technologies Used
 
